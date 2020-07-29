@@ -1,15 +1,14 @@
 # -*- coding: utf-8 -*-
 """
-Created on Tue Jul 28 11:43:41 2020
+Created on Wed Jul 29 16:13:28 2020
 
 @author: appedu
 """
 
 from mcpi.minecraft import Minecraft
-import time
 mc = Minecraft.create()
 
-while True:
-    x,y,z=mc.player.getTilePos()
-    mc.setBlock(x-1,y-1,z+1,38)
-    time.sleep(1)
+x,y,z = mc.player.getTilePos()
+
+for i in range(10):
+    mc.setBlocks(x+i,y-i,z+i,x-i,y-i,z-i,x+i,35)
